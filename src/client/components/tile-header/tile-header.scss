@@ -1,0 +1,41 @@
+@import '../../imports';
+
+.tile-header {
+  @extend %module-title;
+
+  .title {
+    //font-size: 13px;
+    //text-transform: none;
+  }
+
+  .search,
+  .close {
+    cursor: pointer;
+    position: absolute;
+    top: 11px;
+
+    svg {
+      width: 12px;
+
+      path {
+        fill: $text-lighter;
+      }
+    }
+
+    &:hover {
+      svg path {
+        fill: $text-light;
+      }
+    }
+  }
+
+  .search {
+    padding: 1px;
+    right: 34px;
+  }
+
+  .close {
+    padding: 2px;
+    right: $tile-padding-h;
+  }
+}

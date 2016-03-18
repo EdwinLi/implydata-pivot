@@ -1,0 +1,49 @@
+@import '../../imports';
+
+$padding: 50px;
+$total-width: 180px;
+
+.totals {
+  @include pin-full;
+
+  .total-container {
+    position: absolute;
+    left: 50%;
+    top: $padding;
+  }
+
+  .total {
+    display: inline-block;
+    border: 1px solid $border-extra-light;
+    width: $total-width;
+    height: 90px;
+    text-align: center;
+    padding: 5px;
+    margin-right: -1px;
+    margin-bottom: -1px;
+
+    .measure-name {
+      @include ellipsis;
+      cursor: default;
+      margin-top: 15px;
+      padding-left: 3px;
+      padding-right: 3px;
+      font-size: 15px;
+      height: 20px;
+      color: $text-medium;
+      user-select: text;
+    }
+
+    .measure-value {
+      cursor: default;
+      margin-top: 5px;
+      font-size: 20px;
+      user-select: text;
+    }
+  }
+
+  .loader,
+  .query-error {
+    @include pin-full;
+  }
+}

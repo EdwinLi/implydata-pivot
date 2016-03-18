@@ -1,0 +1,82 @@
+@import '../../imports';
+
+.side-drawer {
+  @include pin-left($side-drawer-width);
+
+  font-size: 13px;
+  background: $white;
+  box-shadow: 1px 0 2px 0 hsla(0, 0, 0, 0.13), 2px 0 12px 0 hsla(0, 0, 0, 0.26);
+
+  .title {
+    height: 50px;
+    padding: 7px 0 2px 15px;
+
+    svg {
+      height: 40px;
+
+      path {
+        fill: $brand;
+      }
+    }
+  }
+
+  .data-sources {
+    li {
+      margin: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 14px;
+      color: $text-medium;
+      border-left: 3px solid transparent;
+
+      &:hover {
+        background: $background-lighter;
+        border-color: $border-light;
+      }
+
+      &.selected {
+        background: $background-lighter;
+        border-color: $brand;
+      }
+    }
+  }
+
+  .home-link {
+    display: block;
+    margin: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: $text-medium;
+    border-left: 3px solid transparent;
+
+    &:hover {
+      background: $background-lighter;
+      border-color: $border-light;
+    }
+
+    svg {
+      width: 18px;
+      margin-top: -4px;
+      margin-right: 6px;
+    }
+  }
+}
+
+.side-drawer-enter {
+  transform: translate(-$side-drawer-width - 1, 0);
+
+  &.side-drawer-enter-active {
+    transform: translate(0, 0);
+    transition: transform .2s cubic-bezier(.4, 0, .2, 1) .1s;
+  }
+}
+
+.side-drawer-leave {
+  transform: translate(0, 0);
+
+  &.side-drawer-leave-active {
+    transform: translate(-$side-drawer-width - 1, 0);
+    transition: transform .2s cubic-bezier(.4, 0, .2, 1) .1s;
+  }
+}
